@@ -31,7 +31,7 @@ PORT
 	input2: IN std_logic;
 	output: OUT std_logic
 );
-END OrGate3;
+END XOrGate3;
 
 ARCHITECTURE Struct OF XOrGate3 IS
 BEGIN
@@ -53,7 +53,7 @@ PORT
 	input3: IN std_logic;
 	output: OUT std_logic
 );
-END OrGate4;
+END XOrGate4;
 
 ARCHITECTURE Struct OF XOrGate4 IS
 BEGIN
