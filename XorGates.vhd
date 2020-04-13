@@ -1,9 +1,9 @@
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
 
--- OR Gate for 2 Inputs--
+-- XOR Gate for 2 Inputs--
 
-ENTITY XOrGate2 IS
+ENTITY XorGate2 IS
 PORT
 (
 	input0: IN std_logic;
@@ -21,9 +21,9 @@ END Struct;
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
 
--- OR Gate for 3 Inputs--
+-- XOR Gate for 3 Inputs--
 
-ENTITY XOrGate3 IS
+ENTITY XorGate3 IS
 PORT
 (
 	input0: IN std_logic;
@@ -31,7 +31,7 @@ PORT
 	input2: IN std_logic;
 	output: OUT std_logic
 );
-END XOrGate3;
+END XorGate3;
 
 ARCHITECTURE Struct OF XOrGate3 IS
 BEGIN
@@ -42,9 +42,9 @@ END Struct;
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
 
--- OR Gate for 4 Inputs--
+-- XOR Gate for 4 Inputs--
 
-ENTITY XOrGate4 IS
+ENTITY XorGate4 IS
 PORT
 (
 	input0: IN std_logic;

@@ -14,7 +14,7 @@ END FullAdder;
 
 ARCHITECTURE Struct OF FullAdder IS
 
-COMPONENT OrGate3
+COMPONENT XorGate3
 PORT
 (
 	input0: IN std_logic;
@@ -25,13 +25,12 @@ PORT
 END COMPONENT;
 
 
-COMPONENT OrGate4
+COMPONENT OrGate3
 PORT
 (
 	input0: IN std_logic;
 	input1: IN std_logic;
 	input2: IN std_logic;
-	input3: IN std_logic;
 	output: OUT std_logic
 );
 END COMPONENT;
@@ -45,40 +44,15 @@ PORT
 );
 END COMPONENT;
 
-COMPONENT AndGate3
-PORT
-(
-	input0: IN std_logic;
-	input1: IN std_logic;
-	input2: IN std_logic;
-	output: OUT std_logic
-);
-END COMPONENT;
 
-
-COMPONENT NotGate
-PORT
-(
-	a: IN std_logic;
-	b: OUT std_logic
-);
-END COMPONENT;
-
-SIGNAL NOTA, NOTB, NOTC, AS0, AS1, AS2, AS3, AC0, AC1, AC2: std_logic;
+SIGNAL C0, C1, C2: std_logic;
  
 BEGIN
 ----- Calculate the Sum -----
-	V0: NotGate PORT MAP(a, NOTA);
-	V1: NotGate PORT MAP(b, NOTB);
-	V2: NotGate PORT MAP(cIN, NOTC);
-	V3: AndGate3 PORT MAP(NOTA, NOTB, cIN, AS0);
-	V4: AndGate3 PORT MAP(NOTA, b, NOTC, AS1);
-	V5: AndGate3 PORT MAP(a, NOTB, NOTC, AS2);
-	V6: AndGate3 PORT MAP(A, b, cIN, AS3);
-	V7: OrGate4 PORT MAP(AS0, AS1, AS2, AS3, sum);
+	V0: XorGate3 PORT MAP(a, b, cIN, sum);
 ----- Calculate Cout ------
-	V8: AndGate2 PORT MAP(a, b, AC0);
-	V9: AndGate2 PORT MAP(B, cIN, AC1);
-	V10: AndGate2 PORT MAP(a, cIN, AC2);
-	V11: OrGate3 PORT MAP(AC0, AC1, AC2, cOUT);
+	v1: AndGate2 PORT MAP(a, b, C0);
+	v2: AndGate2 PORT MAP(a, cIN, c1);
+	v3: AndGate2 PORT MAP(b, cIN, c2);
+	v4: OrGate3 PORT MAP(c0, c1, c2, cOUT);	
 END Struct;

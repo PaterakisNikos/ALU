@@ -5,7 +5,7 @@ ENTITY GatedLatch IS
 PORT
 (
 	D, Enable: IN std_logic;
-	Q:	OUT srd_logic
+	Q:	OUT std_logic
 );
 END GatedLatch;
 

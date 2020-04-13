@@ -10,8 +10,8 @@ msg6: .asciiz "\nNumber list has been sorted\n"
 .globl main
 main:
 	move $s0,$gp			#get the intial point to save array 
-	addi $t0,$t0,1			# $t0 = 1
-	add $t1,$zero,$zero		# 
+	addi $t0,$t0,1			# $t0 = 1// t0 = t0 + 1
+	addi $t1, $zero, 1		# move $t1, $zero
 	add $t2,$zero,$zero		# 
 	add $t3,$zero,$zero		# 
 	add $t6,$zero,$zero        
